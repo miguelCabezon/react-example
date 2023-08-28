@@ -1,24 +1,25 @@
 import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard'
 
 export function App() {
-    return (
-       <article className='tw-followCard'>
-        <header className='tw-followCard-header'>
-            <img 
-                className='tw-followCard-avatar' 
-                src="https://unavatar.io/twitter/vexdevlin" 
-                alt="Avatar de vexdevlin" />
-            <div className='tw-followCard-info'>
-                <strong>Miguel Angel Cabezón</strong>
-                <span className='tw-followCard-infoUserName'>@vexdevlin</span>
-            </div>
-        </header>
 
-        <aside>
-            <button className='tw-followCard-followButton'>
-                Seguir
-            </button>
-        </aside>
-       </article> 
+    const format = (username) => `@${username}`
+
+    // const formattedUserName = (<span>@{username}</span>)
+
+    // Los componentes fabrican elementos y los elementos son lo que renderiza React.
+
+    return (
+        <section className='App'>
+            <TwitterFollowCard username="vexdevlin">
+                Miguel Angel Cabezon
+            </TwitterFollowCard>
+            <TwitterFollowCard username="GamesTribune">
+                GTM
+            </TwitterFollowCard>
+            <TwitterFollowCard username="TESOnline_ESP">
+                ElderScrollsOnlineES
+            </TwitterFollowCard>
+        </section>
     )
 }
