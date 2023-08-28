@@ -1,8 +1,8 @@
 import { useState } from 'react' // hook: funcionalidades extra de react
 
-export function TwitterFollowCard ({ children, username = unknown }) {
+export function TwitterFollowCard ({ children, username = unknown, initialIsFollowing }) {
 
-    const [isFollowing, setIsFollowing] = useState(false)
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
     // const imgSrc = 'https://unavatar.io/twitter/${username}
 
@@ -32,7 +32,8 @@ export function TwitterFollowCard ({ children, username = unknown }) {
 
         <aside>
             <button className={buttonClassName} onClick={handleClick}>
-                {text}
+                <span className='tw-followCard-text'>{text}</span>
+                <span className='tw-followCard-stopFollowButton'>Dejar de seguir</span>
             </button>
         </aside>
        </article> 
